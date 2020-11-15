@@ -4,11 +4,16 @@ export default function App() {
   return (
     <Router>
 <nav>
-  <Link to="/">Home</Link>
+  <Link to="/" className="home">Home</Link>
+  <Link to="/Launch" className="home">Launch</Link>
 </nav>
       <Routes>
 
         <Route path="/" element={<Home />}></Route>
+        <Route path="Launch" element={<Launch />}>
+   <Route path="/" elemetn={<Launchindex />} />
+
+        </Route>
       </Routes>
     </Router>
   );
@@ -19,6 +24,16 @@ function Home() {
       <h1>Welcome to our shoe store!</h1>
     </div>
   );
+}
+function Launch(){
+  return(
+     <div>
+       <h1>Launch</h1>
+     </div>
+  )
+}
+function Launchindex(){
+  
 }
 
 const shoes = {
