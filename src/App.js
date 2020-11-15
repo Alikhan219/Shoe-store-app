@@ -40,7 +40,7 @@ function LaunchIndex() {
     <ul>
       {Object.entries(shoes).map(([slug, { name, img }]) => (
         <li key={slug}>
-          <h2>{name}</h2>
+          <h2 className="name">{name}</h2>
           <img src={img} alt={name} />
         </li>
       ))}

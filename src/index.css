@@ -16,3 +16,17 @@ nav{
   font-size: 22px;
   margin-left: 30px;
 }
+img{
+  width: 390px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+ul{
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+li{
+  margin: 0 auto 100px;
+   list-style-type: none;
+} 
