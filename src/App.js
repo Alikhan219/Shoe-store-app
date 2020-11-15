@@ -1,18 +1,20 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route , Link} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, Outlet } from "react-router-dom";
 export default function App() {
   return (
     <Router>
-<nav>
-  <Link to="/" className="home">Home</Link>
-  <Link to="/Launch" className="home">Launch</Link>
-</nav>
+      <nav>
+        <Link to="/" className="home">
+          Home
+        </Link>
+        <Link to="/launch" className="home">
+          Launch
+        </Link>
+      </nav>
       <Routes>
-
-        <Route path="/" element={<Home />}></Route>
-        <Route path="Launch" element={<Launch />}>
-   <Route path="/" elemetn={<Launchindex />} />
-
+        <Route path="/" element={<Home />} />
+        <Route path="launch" element={<Launch />}>
+          <Route path="/" element={<LaunchIndex />} />
         </Route>
       </Routes>
     </Router>
@@ -25,28 +27,38 @@ function Home() {
     </div>
   );
 }
-function Launch(){
-  return(
-     <div>
-       <h1>Launch</h1>
-     </div>
-  )
+function Launch() {
+  return (
+    <div>
+      <h1>Launch</h1>
+      <Outlet />
+    </div>
+  );
 }
-function Launchindex(){
-  
+function LaunchIndex() {
+  return (
+    <ul>
+      {Object.entries(shoes).map(([slug, { name, img }]) => (
+        <li key={slug}>
+          <h2>{name}</h2>
+          <img src={img} alt={name} />
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 const shoes = {
   "air-jordan-3-valer-blue": {
     name: "VALOUR BLUE",
-    img: "",
+    img: "https://secure-images.nike.com/is/image/DotCom/CT8532_104_A_PREM?$SNKRS_COVER_WD$&align=0,1",
   },
   "jordan-mars-270-londons": {
     name: "JORDAN MARS 270 LONDON",
-    img: "",
+    img: "https://secure-images.nike.com/is/image/DotCom/CV3042_001_A_PREM?$SNKRS_COVER_WD$&align=0,1",
   },
   "air-jordan-1-zoom-racer-blue": {
     name: "RACER",
-    img: "",
+    img: "https://secure-images.nike.com/is/image/DotCom/CK6637_104_A_PREM?$SNKRS_COVER_WD$&align=0,1",
   },
 };
