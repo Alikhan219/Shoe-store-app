@@ -1,25 +1,25 @@
-import logo from "./logo.svg";
-import "./App.css";
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react';
+import {BrowserRouter as Router, Routes} from "react-router-dom"
+export default function App() {
+  return <Router>
+    <Routes>
+      
+    </Routes>
+  </Router>
+}
+const shoes = {
+  "air-jordan-3-valer-blue":{
+    name: "VALOUR BLUE",
+    img: ""
+  },
+  "jordan-mars-270-londons":{
+    name: "JORDAN MARS 270 LONDON",
+    img:""
+  },
+  "air-jordan-1-zoom-racer-blue":{
+    name: "RACER",
+    img: ""
+  }
 }
 
-export default App;
+
