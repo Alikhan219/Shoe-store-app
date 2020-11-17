@@ -41,7 +41,7 @@ function LaunchIndex() {
     <ul>
       {Object.entries(shoes).map(([slug, { name, img }]) => (
         <li key={slug}>
-        <Link to={`/launch/${slug}`}>
+        <Link className="linl-dec" to={`/launch/${slug}`}>
           <h2 className="name">{name}</h2>
           <img src={img} alt={name} />
           </Link>
@@ -53,7 +53,18 @@ function LaunchIndex() {
 
 function LaunchShoe(){
   const{slug} = useParams();
-  return <div>{slug}</div>
+  const shoe= shoes[slug]
+
+  if(!shoe){
+    return <h2>No Shoes Found</h2>
+  }
+const {name, img} = shoe
+
+
+  return <div className="big-div">
+    <h2>{name}</h2>
+    <img src={img} alt={name} className="big-img" />
+  </div>
 }
 
 
