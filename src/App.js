@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link, Outlet } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, Outlet,useParams } from "react-router-dom";
 export default function App() {
   return (
     <Router>
@@ -52,7 +52,8 @@ function LaunchIndex() {
 }
 
 function LaunchShoe(){
-  return <div>Shoe!</div>
+  const{slug} = useParams();
+  return <div>{slug}</div>
 }
 
 
