@@ -15,7 +15,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="launch" element={<Launch />}>
           <Route path="/" element={<LaunchIndex />} />
-          <Route path="" element={<LaunchShoe />} />
+          <Route path=":slug" element={<LaunchShoe />} />
         </Route>
       </Routes>
     </Router>
@@ -41,8 +41,10 @@ function LaunchIndex() {
     <ul>
       {Object.entries(shoes).map(([slug, { name, img }]) => (
         <li key={slug}>
+        <Link to={`/launch/${slug}`}>
           <h2 className="name">{name}</h2>
           <img src={img} alt={name} />
+          </Link>
         </li>
       ))}
     </ul>
