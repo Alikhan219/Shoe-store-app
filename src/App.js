@@ -15,6 +15,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="launch" element={<Launch />}>
           <Route path="/" element={<LaunchIndex />} />
+          <Route path="" element={<LaunchShoe />} />
         </Route>
       </Routes>
     </Router>
@@ -47,6 +48,11 @@ function LaunchIndex() {
     </ul>
   );
 }
+
+function LaunchShoe(){
+  return <div>Shoe!</div>
+}
+
 
 const shoes = {
   "air-jordan-3-valer-blue": {
